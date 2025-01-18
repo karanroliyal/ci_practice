@@ -1,38 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
 </head>
+
 <body>
-    
-    <?php echo form_open_multipart('myform/success');?>
 
-    <input type="text" placeholder="Enter username" value='<?php echo set_value('name') ?>' name="name" >
-    <?php echo form_error('name') ?><br><br>
 
-    <input type="text" placeholder="Enter email" value='<?php echo set_value('email') ?>'  name="email" >
-    <?php echo form_error('email') ?><br><br>
+    <form id="formId" >
 
-    <input type="password" placeholder="Enter password" value='<?php echo set_value('password') ?>'  name="password" >
-    <?php echo form_error('password') ?><br><br>
+        <input type="text" placeholder="Enter username"  name="name">
+        <span class="name-Error error"></span><br><br>
 
-    <input type="file" name="image" ><br><br>
+        <input type="text" placeholder="Enter email"  name="email">
+        <span class="email-Error error"></span><br><br>
 
-    <input type="submit" value="Submit"><br><br>
+        <input type="password" placeholder="Enter password"  name="password">
+        <span class="password-Error error"></span><br><br>
 
-    <?php echo form_close();?>
+        <input type="file" name="image" ><br><br>
+        <span class="image-Error error"></span>
+
+        <button type="button" onclick="submitFormData()">Submit</button>
+
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/script.js"></script>
+
 
 </body>
+
 </html>
-
-<script>
-
-function alertMe(e){
-    console.log("hello")
-}
-
-1  
-
-</script>
